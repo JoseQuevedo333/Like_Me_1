@@ -1,4 +1,4 @@
-const { agregarPost, obtenerPost } = require("./posts");
+const { agregarPost, obtenerPost } = require("./post");
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 app.listen(3000, console.log("SERVIDOR ENCENDIDO"));
-app.get("/posts", async (req, res) => {
+app.get("/post", async (req, res) => {
   const post = await obtenerPost();
   res.json(post);
 });
